@@ -30,7 +30,7 @@ export default function RootLayout({
         <Header />
         <SubHeader />
         <section className="w-full px-8 text-gray-700 bg-white mb-5">
-          <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+          <div className="container flex flex-col flex-wrap items-center1 justify-between1 py-5 mx-auto md:flex-row max-w-7xl">
             <div className="flex h-full w-3/4 rounded-md">
               <main className="flex-1">{children}</main>
             </div>

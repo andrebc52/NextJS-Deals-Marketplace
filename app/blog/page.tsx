@@ -6,23 +6,74 @@ import Link from "next/link";
 
 const blogPosts = [
   {
-    title: "How to Boost Your SEO with Quality Backlinks",
+    title: "Simple Time Management",
     description:
-      "Learn the strategies to improve your search engine rankings through effective backlinking.",
-    date: "June 1, 2024",
-    author: "Jane Doe",
-    href: "/blog/how-to-boost-seo",
+      "Managing your time can make the difference between getting ahead in life or staying exactly where you are.",
+    date: "May 18, 2021",
+    author: "Scott Reedman",
+    href: "#_",
+    category: "Business",
+    imgSrc:
+      "https://cdn.vnoc.com/templates/tailwind/community/images/clock.jpg",
   },
   {
-    title: "The Importance of Social Media Marketing",
+    title: "The Fruits Life",
     description:
-      "Discover why social media marketing is crucial for your business growth.",
-    date: "May 25, 2024",
-    author: "John Smith",
-    href: "/blog/social-media-marketing",
+      "Take a moment and enjoy the many fruits of life. Relaxation and a healthy diet can go a long way.",
+    date: "May 15, 2021",
+    author: "Jake Caldwell",
+    href: "#_",
+    category: "Nutrition",
+    imgSrc:
+      "https://cdn.vnoc.com/templates/tailwind/community/images/lemons.jpg",
   },
-  // Add more blog posts here
+  {
+    title: "Creating a Future Worth Living",
+    description:
+      "Learn the attributes you need to gain in order to build a future and create a life that you are truly happy with.",
+    date: "April 17, 2021",
+    author: "Mary Jane",
+    href: "#_",
+    category: "Lifestyle",
+    imgSrc:
+      "https://cdn.vnoc.com/templates/tailwind/community/images/fruit.jpg",
+  },
+  {
+    title: "The Healthier Version of Yourself",
+    description:
+      "If you want to excel in life and become a better version of yourself, you'll need to upgrade your life.",
+    date: "April 10, 2021",
+    author: "Fred Jones",
+    href: "#_",
+    category: "Health",
+    imgSrc:
+      "https://cdn.vnoc.com/templates/tailwind/community/images/workout.jpg",
+  },
+  {
+    title: "Enjoy the Meals of the Kings",
+    description:
+      "Take the time to enjoy the life that you've created. It's totally fine to live like kings and eat like royalty.",
+    date: "April 6, 2021",
+    author: "Mike Roberts",
+    href: "#_",
+    category: "Food",
+    imgSrc: "https://cdn.vnoc.com/templates/tailwind/community/images/food.jpg",
+  },
+  {
+    title: "Writing for Success",
+    description:
+      "Writing about your plans for success is extremely helpful for yourself and it will allow you to share your story.",
+    date: "May 25, 2021",
+    author: "Tom Johnson",
+    href: "#_",
+    category: "Motivation",
+    imgSrc:
+      "https://cdn.vnoc.com/templates/tailwind/community/images/books.jpg",
+  },
 ];
+
+// Select a featured blog post
+const featuredPost = blogPosts[0];
 
 const Blog: React.FC = () => {
   return (
@@ -30,17 +81,19 @@ const Blog: React.FC = () => {
       <div className="w-full px-0 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
         <div className="flex flex-col items-center sm:px-5 md:flex-row">
           <div className="w-full md:w-1/2">
-            <a href="#_" className="block">
+            <a href={featuredPost.href} className="block">
               <img
                 className="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/cupcakes.jpg"
-                alt=""
+                src={featuredPost.imgSrc}
+                alt={featuredPost.title}
               />
             </a>
           </div>
           <div className="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
             <div className="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
-              <div className="bg-pink-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+              <div
+                className={`bg-${featuredPost.category.toLowerCase()}-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block`}
+              >
                 <svg
                   className="w-3.5 h-3.5 mr-1"
                   fill="currentColor"
@@ -52,14 +105,14 @@ const Blog: React.FC = () => {
                 <span>Featured</span>
               </div>
               <h1 className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">
-                <a href="#_">Eating For Productivity</a>
+                <a href={featuredPost.href}>{featuredPost.title}</a>
               </h1>
               <p className="pt-2 text-sm font-medium">
                 by{" "}
                 <a href="#_" className="mr-1 underline">
-                  John Doe
+                  {featuredPost.author}
                 </a>{" "}
-                · <span className="mx-1">April 23rd, 2021</span> ·{" "}
+                · <span className="mx-1">{featuredPost.date}</span> ·{" "}
                 <span className="mx-1 text-gray-600">5 min. read</span>
               </p>
             </div>
@@ -67,167 +120,36 @@ const Blog: React.FC = () => {
         </div>
 
         <div className="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/fruit.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-purple-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Lifestyle</span>
+          {blogPosts.map((post, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4"
+            >
+              <a href={post.href} className="block">
+                <img
+                  className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+                  src={post.imgSrc}
+                  alt={post.title}
+                />
+              </a>
+              <div
+                className={`bg-${post.category.toLowerCase()}-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block`}
+              >
+                <span>{post.category}</span>
+              </div>
+              <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
+                <a href={post.href}>{post.title}</a>
+              </h2>
+              <p className="text-sm text-gray-500">{post.description}</p>
+              <p className="pt-2 text-xs font-medium">
+                <a href="#_" className="mr-1 underline">
+                  {post.author}
+                </a>{" "}
+                · <span className="mx-1">{post.date}</span> ·{" "}
+                <span className="mx-1 text-gray-600">5 min. read</span>
+              </p>
             </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              <a href="#_">Creating a Future Worth Living</a>
-            </h2>
-            <p className="text-sm text-gray-500">
-              Learn the attributes you need to gain in order to build a future
-              and create a life that you are truly happy with.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Mary Jane
-              </a>{" "}
-              · <span className="mx-1">April 17, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/workout.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-pink-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Health</span>
-            </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              The Healther Version of Yourself
-            </h2>
-            <p className="text-sm text-gray-500">
-              If you want to excel in life and become a better version of
-              yourself, you&apos;ll need to upgrade your life.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Fred Jones
-              </a>{" "}
-              · <span className="mx-1">April 10, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/food.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-red-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Food</span>
-            </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              Enjoy the Meals of the Kings
-            </h2>
-            <p className="text-sm text-gray-500">
-              Take the time to enjoy the life that you&apos;ve created.
-              It&apos;s totally fine to live like kings and eat like royalty.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Mike Roberts
-              </a>{" "}
-              · <span className="mx-1">April 6, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/books.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-blue-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Motivation</span>
-            </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              Writing for Success
-            </h2>
-            <p className="text-sm text-gray-500">
-              Writing about your plans for success is extremely helpful for
-              yourself and it will allow you to share your story.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Tom Johnson
-              </a>{" "}
-              · <span className="mx-1">May 25, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/clock.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-gray-800 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Business</span>
-            </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              Simple Time Management
-            </h2>
-            <p className="text-sm text-gray-500">
-              Managing your time can make the difference between getting ahead
-              in life or staying exactly where you are.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Scott Reedman
-              </a>{" "}
-              · <span className="mx-1">May 18, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" className="block">
-              <img
-                className="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
-                src="https://cdn.vnoc.com/templates/tailwind/community/images/lemons.jpg"
-                alt=""
-              />
-            </a>
-            <div className="bg-yellow-400 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-              <span>Nutrition</span>
-            </div>
-            <h2 className="text-lg font-bold sm:text-xl md:text-2xl">
-              The Fruits Life
-            </h2>
-            <p className="text-sm text-gray-500">
-              Take a moment and enjoy to enjoy the many fruits of life.
-              Relaxation and a healthy diet can go a long way.
-            </p>
-            <p className="pt-2 text-xs font-medium">
-              <a href="#_" className="mr-1 underline">
-                Jake Caldwell
-              </a>{" "}
-              · <span className="mx-1">May 15, 2021</span> ·{" "}
-              <span className="mx-1 text-gray-600">3 min. read</span>
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
