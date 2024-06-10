@@ -79,7 +79,7 @@ const Blog: React.FC = () => {
   return (
     <section className="bg-white">
       <div className="w-full px-0 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
-        <div className="flex flex-col items-center sm:px-5 md:flex-row">
+        <div className="flex flex-col items-center pe-5 md:flex-row">
           <div className="w-full md:w-1/2">
             <a href={featuredPost.href} className="block">
               <img

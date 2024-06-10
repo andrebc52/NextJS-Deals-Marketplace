@@ -13,11 +13,15 @@ export const metadata: Metadata = {
   description: "Your Business Directory",
 };
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+  showSidebar?: boolean;
+}
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  showSidebar = true,
+}: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
@@ -29,14 +33,16 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <SubHeader />
-        <section className="w-full px-8 text-gray-700 bg-white mb-5">
-          <div className="container flex flex-col flex-wrap items-center1 justify-between1 py-5 mx-auto md:flex-row max-w-7xl">
-            <div className="flex h-full w-3/4 rounded-md">
-              <main className="flex-1">{children}</main>
-            </div>
-            <div className="flex h-full w-1/4 bg-gray-50 rounded-md">
-              <Sidebar />
-            </div>
+        <section className="w-full px-8 text-gray-700 bg-white pb-20">
+          <div className="container flex flex-col md:flex-row py-5 mx-auto max-w-7xl">
+            <main className={showSidebar ? "flex-1 md:w-3/4" : "flex-1 w-full"}>
+              {children}
+            </main>
+            {showSidebar && (
+              <aside className="w-full md:w-1/4 bg-gray-50 rounded-md">
+                <Sidebar />
+              </aside>
+            )}
           </div>
         </section>
         <Footer />

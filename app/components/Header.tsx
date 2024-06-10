@@ -46,7 +46,7 @@ const Header = () => {
             logo
           </a>
           <nav className="ml-5">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-1">
               <div
                 className="hidden w-full md:block md:w-auto"
                 id="navbar-dropdown"

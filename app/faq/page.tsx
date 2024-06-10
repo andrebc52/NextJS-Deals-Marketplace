@@ -6,7 +6,7 @@ import React from "react";
 const Faq: React.FC = () => {
   return (
     <section className="bg-white">
-      <div className="px-3 mx-auto max-w-7xl">
+      <div className="pe-5 mx-auto max-w-7xl">
         <h2 className="relative text-4xl font-extrabold tracking-tight sm:text-5xl">
           Frequently Asked Questions
         </h2>
