@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface MenuItem {
   name: string;
@@ -34,12 +34,18 @@ const Header: React.FC = () => {
     { name: "Contact Us", href: "/contact" },
   ];
 
+  useEffect(() => {
+    const handleResize = () => setIsDropdownOpen(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className="w-full px-8 text-gray-700 bg-gray-50 border">
       <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
         <div className="relative flex flex-col md:flex-row">
           <a
-            href="#_"
+            href="/"
             className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
           >
             logo

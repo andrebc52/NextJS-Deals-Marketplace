@@ -6,8 +6,8 @@ import React from "react";
 
 const Signin: React.FC = () => {
   return (
-    <section className="w-full py-40">
-      <div className="max-w-full mx-auto">
+    <section className="w-full px-8 py-40 bg-gray-100 xl:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center md:flex-row">
           <div className="w-full space-y-5 md:w-3/5 md:pr-16">
             <p
