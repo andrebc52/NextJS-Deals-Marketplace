@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 interface MenuItem {
   name: string;
@@ -10,7 +9,7 @@ interface MenuItem {
   items?: MenuItem[];
 }
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -71,9 +70,9 @@ const Header = () => {
                             >
                               <path
                                 stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
                                 d="m1 1 4 4 4-4"
                               />
                             </svg>
@@ -99,11 +98,12 @@ const Header = () => {
                           )}
                         </>
                       ) : (
-                        <Link href={item.href!} legacyBehavior>
-                          <a className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100">
-                            {item.name}
-                          </a>
-                        </Link>
+                        <a
+                          href={item.href!}
+                          className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100"
+                        >
+                          {item.name}
+                        </a>
                       )}
                     </li>
                   ))}
