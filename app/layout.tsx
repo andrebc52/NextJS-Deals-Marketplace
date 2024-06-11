@@ -33,13 +33,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <SubHeader />
-        <section className="w-full px-8 text-gray-700 bg-white mb-5">
+        <section className="w-full px-8 text-gray-700 bg-white pb-20">
           <div className="container flex flex-col md:flex-row py-5 mx-auto max-w-7xl">
             <main className={showSidebar ? "flex-1 md:w-3/4" : "flex-1 w-full"}>
               {children}
             </main>
             {showSidebar && (
-              <aside className="w-full md:w-1/4 bg-gray-50 rounded-md">
+              <aside className="divSidebar w-full md:w-1/4 bg-gray-50 rounded-md">
                 <Sidebar />
               </aside>
             )}

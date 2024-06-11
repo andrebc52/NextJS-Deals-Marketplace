@@ -1,10 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 const Signin: React.FC = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".divSidebar");
+    elements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+    const subHeaderElements = document.querySelectorAll(".subHeader");
+    subHeaderElements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+  }, []);
+
   return (
     <section className="w-full py-40">
       <div className="max-w-7xl mx-auto">

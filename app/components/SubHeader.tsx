@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SubHeader = () => {
   return (
-    <section className="relative w-full bg-white">
+    <section className="subHeader relative w-full bg-white">
       <div className="relative py-5 px-10 mx-auto max-w-7xl">
         <div className="flex flex-col items-start sm:items-center">
           <div className="flex items-center w-full gap-2 px-3 py-2 text-gray-500 border rounded-full bg-gray-50 sm:w-auto">

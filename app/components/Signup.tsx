@@ -2,9 +2,19 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 const Signup: React.FC = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".divSidebar");
+    elements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+    const subHeaderElements = document.querySelectorAll(".subHeader");
+    subHeaderElements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+  }, []);
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-full pt-20">
