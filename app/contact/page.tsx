@@ -1,13 +1,24 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 const Contact: React.FC = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".divSidebar");
+    elements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+    const subHeaderElements = document.querySelectorAll(".subHeader");
+    subHeaderElements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+  }, []);
   return (
     <section className="relative leading-7 text-gray-900 bg-white border-solid">
-      <div className="box-border mx-auto my-5 border-solid pe-5 max-w-7xl">
+      <div className="box-border mx-auto my-10 border-solid pe-5 max-w-7xl">
         <div className="flex flex-col items-center1 leading-7 text-gray-900 border-0 border-gray-200 lg:flex-row">
           <div className="box-border flex flex-col justify-center w-full h-full p-8 text-gray-900 border-solid lg:w-1/2 md:p-16 lg:p-0 lg:pl-0 lg:pr-20">
             <h2 className="relative text-4xl font-extrabold tracking-tight sm:text-5xl">

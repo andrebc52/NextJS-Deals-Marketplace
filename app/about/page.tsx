@@ -1,10 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 const About: React.FC = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".divSidebar");
+    elements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+    const subHeaderElements = document.querySelectorAll(".subHeader");
+    subHeaderElements.forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+  }, []);
   return (
     <section className="relative leading-7 text-gray-900 bg-white border-solid">
       <div className="box-border mx-auto border-solid pe-5 max-w-7xl">
