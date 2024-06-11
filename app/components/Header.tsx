@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface MenuItem {
   name: string;
@@ -48,7 +49,13 @@ const Header: React.FC = () => {
             href="/"
             className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
           >
-            logo
+            <Image
+              src="/images/contrib-logo.png"
+              alt=""
+              width={120}
+              height={50}
+              className=""
+            />
           </a>
           <nav className="ml-5">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-1">
@@ -106,7 +113,7 @@ const Header: React.FC = () => {
                       ) : (
                         <a
                           href={item.href!}
-                          className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100"
+                          className="block py-2 px-2 text-gray-700 rounded hover:bg-gray-100"
                         >
                           {item.name}
                         </a>
