@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const Sidebar: React.FC = () => {
-  const links = [
+  const topSearches = [
     "Enables users to create AI Avatar",
     "Transforming photography forever using AI",
     "Gamified marketplace for digital assets",
@@ -12,11 +12,21 @@ const Sidebar: React.FC = () => {
     "The simple calendar and booking solution",
   ];
 
+  const discussions = [
+    "Best practices for creating AI Avatars",
+    "Innovations in AI-powered photography",
+    "Future of digital asset marketplaces",
+    "Quick setup tips for domains & mailboxes",
+    "Strategies for selling domains effectively",
+    "Enhancing text creation with AI",
+    "Improving scheduling with simple calendar solutions",
+  ];
+
   return (
     <div className="px-5 py-5">
       <h4 className="font-bold">Top Searches</h4>
       <ul>
-        {links.map((link, index) => (
+        {topSearches.map((link, index) => (
           <a
             href="#"
             key={index}
@@ -35,7 +45,7 @@ const Sidebar: React.FC = () => {
       </ul>
       <h4 className="font-bold mt-5">Discussions</h4>
       <ul>
-        {links.map((link, index) => (
+        {discussions.map((link, index) => (
           <a
             href="#"
             key={index}
