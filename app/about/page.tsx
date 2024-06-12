@@ -24,8 +24,8 @@ const About: React.FC = () => {
               About Us
             </h2>
             <p className="mt-2 text-xl text-left border-0 border-gray-200 sm:text-2xl">
-              Welcome to Zipsite Solutions Inc., your premier partner for
-              innovative technology services and solutions.
+              Welcome to Contrib, your premier partner for innovative technology
+              services and solutions.
             </p>
             <div className="grid gap-4 mt-8 leading-7 border-0 border-gray-200 sm:mt-10 sm:gap-6 lg:mt-12 lg:gap-8">
               <div className="box-border flex items-start text-gray-900 border-solid">
@@ -52,11 +52,10 @@ const About: React.FC = () => {
                     Our Mission
                   </h3>
                   <p className="box-border mt-2 text-base leading-normal text-gray-900 border-solid">
-                    At Zipsite Solutions Inc., our mission is to empower
-                    businesses and individuals through cutting-edge technology.
-                    We strive to deliver reliable, scalable, and customized
-                    solutions that drive growth, efficiency, and success for our
-                    clients.
+                    At Contrib, our mission is to empower businesses and
+                    individuals through cutting-edge technology. We strive to
+                    deliver reliable, scalable, and customized solutions that
+                    drive growth, efficiency, and success for our clients.
                   </p>
                 </div>
               </div>
@@ -84,11 +83,11 @@ const About: React.FC = () => {
                     Who We Are
                   </h3>
                   <p className="box-border mt-2 text-base leading-normal text-gray-900 border-solid">
-                    Zipsite Solutions Inc. is a team of passionate
-                    technologists, designers, and strategists dedicated to
-                    solving complex challenges with simplicity and elegance.
-                    With years of experience in the industry, our experts bring
-                    a wealth of knowledge and expertise to every project.
+                    Contrib is a team of passionate technologists, designers,
+                    and strategists dedicated to solving complex challenges with
+                    simplicity and elegance. With years of experience in the
+                    industry, our experts bring a wealth of knowledge and
+                    expertise to every project.
                   </p>
                 </div>
               </div>
