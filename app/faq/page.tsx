@@ -33,7 +33,7 @@ const Faq: React.FC = () => {
             <p>
               You can upgrade your account by visiting{" "}
               <a
-                href="https://devdojo.com/pro"
+                href=""
                 className="text-indigo-500 underline"
                 data-primary="indigo-500"
               >
@@ -41,11 +41,7 @@ const Faq: React.FC = () => {
               </a>
               . You will also gain access to many other applications and
               sections of the site.{" "}
-              <a
-                href="https://help.hellonext.co/faq/startup-eligibility/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="" target="_blank" rel="noopener noreferrer">
                 here
               </a>
               .
@@ -57,11 +53,7 @@ const Faq: React.FC = () => {
               You will have unlimited access to all your pre-built pages;
               however, if you want to be able to download and export your pages,
               you&apos;ll need a pro account.{" "}
-              <a
-                href="https://paddle.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="" target="_blank" rel="noopener noreferrer">
                 Paddle
               </a>{" "}
               for processing payments.
@@ -98,7 +90,7 @@ const Faq: React.FC = () => {
               If you need assistance implementing the templates into your
               project, you can contact support or you can visit our{" "}
               <a
-                href="https://devdojo.com/questions"
+                href=""
                 className="text-indigo-500 underline"
                 data-primary="indigo-500"
               >
